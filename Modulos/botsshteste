@@ -12,10 +12,10 @@ ShellBot.username
 menu() {
     local msg
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-        msg+="<b>•🔹• OLA SEJA BEM VINDO •🔹•</b>\n"
+        msg+="<b>•🔹• BOT TESTE DISPONIVEL •🔹•</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="Conta SSH R$ 10/Mês"
-        ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+        msg+="1 ACESSO SSH R$ 10/Mês"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e $msg)" \
         --reply_markup "$keyboard1" \
         --parse_mode html
@@ -26,7 +26,7 @@ menu() {
 criarteste() {
     [[ $(grep -wc ${callback_query_from_id} lista) != '0' ]] && {
       ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-        --text "VOCÊ JÁ CRIOU SEU TESTE!"
+        --text "OLHA SAFADESA, VOCÊ JÁ CRIOU SEU TESTE!"
       return 0
     }
     usuario=$(echo TESTE$(( RANDOM% + 250 )))
@@ -65,7 +65,7 @@ infouser () {
 #informacoes usuario
 pix () {
 	 ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-	--text "$(echo -e "<b>Conta SSH R$ 10/Mês \n\nCOPIE A CHAVE PIX ALEATÓRIA</b>\n <code>b54bc1c3-c892-4b3a-a7ac-73a46f9eefa3</code>")" \
+	--text "$(echo -e "<b>Conta SSH R$ 10/Mês \n\nCOPIE A CHAVE PIX </b>\n <code>canalminerdso@gmail.com</code>")" \
 	--parse_mode html
 	return 0
 }
@@ -73,10 +73,10 @@ pix () {
 unset botao1
 botao1=''
 ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text 'CRIAR TESTE' --callback_data 'gerarssh'
-ShellBot.InlineKeyboardButton --button 'botao1' --line 2 --text 'BAIXAR APP NT Pro' --callback_data '2' --url 'https://play.google.com/store/apps/details?id=com.ntinjector.pro' # LINK APP
-ShellBot.InlineKeyboardButton --button 'botao1' --line 3 --text 'CONTATO TELEGRAM' --callback_data '3' --url 'https://t.me/NT_Injector_Pro' # LINK TELEGRAM
+ShellBot.InlineKeyboardButton --button 'botao1' --line 2 --text 'BAIXAR APP NT Pro' --callback_data '2' --url 'https://play.google.com/store/apps/details?id=com.top.minerdso' # LINK APP
+ShellBot.InlineKeyboardButton --button 'botao1' --line 3 --text 'ENVIE SEU COMPROVANTE' --callback_data '3' --url 'https://t.me/canalminerdso' # LINK TELEGRAM
 ShellBot.InlineKeyboardButton --button 'botao1' --line 4 --text 'PIX' --callback_data 'pay'
-ShellBot.InlineKeyboardButton --button 'botao1' --line 4 --text 'PICPAY' --callback_data '4' --url 'https://picpay.me/ntpro/10.0' # LINK PICPAY
+ShellBot.InlineKeyboardButton --button 'botao1' --line 4 --text 'PICPAY' --callback_data '4' --url 'https://picpay.me/minerdso/10.0' # LINK PICPAY
 ShellBot.regHandleFunction --function criarteste --callback_data gerarssh
 ShellBot.regHandleFunction --function pix --callback_data pay
 
